@@ -1,0 +1,33 @@
+fieldset{
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(60, 26, 115, 0.1);
+    height: 250px;
+    width: 290px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 25px 0;
+}
+fieldset input{
+    height: 50px;
+    width: 230px;
+    background-color: #F2F2F2;
+    border-radius: 8px;
+    border: unset;
+    margin: 16px 0 7px 0;
+    padding-left: 15px;
+}
+fieldset button{
+    height: 50px;
+    width: 170px;
+    border-radius: 8px;
+    border: unset;
+    background-color: #5A6CEA;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 25px;
+    align-self: center;
+}
