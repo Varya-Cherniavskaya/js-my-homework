@@ -1,19 +1,15 @@
 // 1. Запитайте у користувача ім'я та привітайте його за допомогою alert.
 
-// let str = prompt ("What's your name?")
-// alert ("Hi\n" + str)
-
-
+// let userName = prompt ("What's your name?")
+// alert ("Hi\n" + userName)
 
 
 // 2. Попросіть користувача ввести рядок через 'prompt'. 
 // Використовуючи split та join зробіть що б після будь-якої коми слід було слово блін, .
 
-// let str = prompt ("Please write down some sentences below with comma")
-// let strM = str.split(", ")
-// alert (strM.join(" блін, "))
-
-
+// let userSentence = prompt ("Please write down some sentences below with comma")
+// let anchorSymbol = userSentence.split(", ")
+// alert (anchorSymbol.join(" блін, "))
 
 
 // 3. Перетворіть рядок, введений користувачем, таким чином, щоб перша літера ставала великою, а решта - маленькими:
