@@ -5,29 +5,29 @@
 // console.log(b, c)
 
 
-// let a = prompt('Скільки вам років?')
-// if (isNaN(a)==true){
+// let age = prompt('Скільки вам років?')
+// if (isNaN(age)==true){
 //     alert("Введіть цифри")
 // }
 // else{
-//     alert("Рік народження = " + (2024 - a))
+//     alert("Рік народження = " + (2024 - age))
 // }
 
 
-// let a = prompt("Введіть значення температури по Цельсію")
-// a = a * (9/5) + 32
-// alert (a)
+// let temperature = prompt("Введіть значення температури по Цельсію")
+// temperature = temperature * (9/5) + 32
+// alert (temperature)
 
 
-// let a = prompt ("Enter Num 1")
-// let b = prompt ("Enter Num 2")
-// alert("Num1 / Num 2 = " + Math.floor(a / b))
+// let numberFirst = prompt ("Enter Num 1")
+// let numberSecond = prompt ("Enter Num 2")
+// alert("Num1 / Num 2 = " + Math.floor(numberFirst / numberSecond))
 
 
-// const a = prompt ("Ведіть скільки долларів хочете поміняти на гривні")
+// const dollars = prompt ("Ведіть скільки долларів хочете поміняти на гривні")
 // const rate = 37.59
-// b = rate*a
-// alert ("Всього у гривнях " + b.toFixed(2))
+// grivny = rate*dollars
+// alert ("Всього у гривнях " + grivny.toFixed(2))
 
 
 // За допомогою prompt організуйте введення трьох констант red, green, blue у десятковій системі. 
