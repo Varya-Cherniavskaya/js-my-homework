@@ -1,190 +1,315 @@
-// task 1. Temperature
-// const convertTemperature = (temperature, sourceUnit) => {
-//     if (sourceUnit.toLowerCase() === 'c') {
-//         return (temperature * 9/5) + 32;
-//     } else if (sourceUnit.toLowerCase() === 'f') {
-//         return (temperature - 32) * 5/9;
-//     } else {
-//         return "Невірно вказана одиниця вимірювання. Введіть 'C' або 'F'.";
+/*
+1. Temperature
+Оформіть Temperature як функцію, яку параметром передається температура в одній системі, а повертається до іншої. 
+Жодних prompt та console.log у коді бути не повинно, якщо ви хочете надалі користуватися цією функцією будь-де в коді зручно. 
+Чи потрібен блок коду функції для вирішення цього завдання?
+*/
+
+// let tCelsius = 30;
+// let tKelvin = 0;
+// let tFahrenheit = 0;
+
+// const CelToKelv = (src) =>
+// {
+// return src + 273.15; 
+// }
+
+// const CelToFahr = (src) =>
+// {
+// return src + 32; 
+// }
+
+// tKelvin = CelToKelv(tCelsius);
+// tFahrenheit = CelToFahr(tCelsius);
+
+//*********************************************************************************
+
+/*
+2. RGB
+Оформіть Number: RGB як функцію, яку параметрами передаються три числа (r, g, b) => . 
+Функція повинна повертати рядок у нотації #RRGGBB. 
+Використовуючи умови або тернарний оператор Досягніть що б у результаті завжди було 7 символів, навіть коли значення кольору менше 15ти. 
+Чи потрібний блок коду цієї функції?
+*/
+
+
+// let red = 256;
+// let green = 128;
+// let blue = 64;
+
+// const colorGen = (r, g, b) =>
+// {
+//     let redHex, greenHex, blueHex;
+
+//     const DecToHex = (param) =>
+//     {
+//         return param.toString(16);
 //     }
-// }
-// console.log(convertTemperature(20, 'C'));
-// console.log(convertTemperature(68, 'F'));
 
-
-
-// task 2. RGB
-// const convertToHex = color => {
-//     const hex = color.toString(16);
-//     return hex.length === 1 ? '0' + hex : hex;
-// }
-// const NumberToRGB = (r, g, b) => {
-//     const red = convertToHex(r);
-//     const green = convertToHex(g);
-//     const blue = convertToHex(b);
-//     return `#${red}${green}${blue}`;
-// };
-// const red = parseInt(prompt("Введіть значення червоного кольору (від 0 до 255):"));
-// const green = parseInt(prompt("Введіть значення зеленого кольору (від 0 до 255):"));
-// const blue = parseInt(prompt("Введіть значення синього кольору (від 0 до 255):"));
-
-// const cssColor = NumberToRGB(red, green, blue);
-// console.log("CSS-колір:", cssColor);
-
-
-
-// task 3. Flats
-// const calculateEntranceAndFloor = (floors, flatsPerFloor, targetFlat) => {
-//     const flatsPerEntrance = floors * flatsPerFloor;
-//     const entrance = Math.ceil(targetFlat / flatsPerEntrance);
-//     const flatIndexInEntrance = (targetFlat - 1) % flatsPerEntrance;
-//     const floor = Math.ceil((flatIndexInEntrance + 1) / flatsPerFloor);
+//     redHex = DecToHex(r);
+//     greenHex = DecToHex(g);
+//     blueHex = DecToHex(b);
     
-//     return { entrance, floor };
-// };
-// const flats = () => {
-//     const floors = parseInt(prompt("Введіть кількість поверхів у будинку:"));
-//     const flatsPerFloor = parseInt(prompt("Введіть кількість квартир на поверсі:"));
-//     const targetFlat = parseInt(prompt("Введіть номер квартири:"));
-
-//     const { entrance, floor } = calculateEntranceAndFloor(floors, flatsPerFloor, targetFlat);
-
-//     console.log(`Квартира №${targetFlat} знаходиться на ${entrance}-му під'їзді та ${floor}-му поверсі.`);
-// };
-// flats();
 
 
+//     return ("#" + redHex + greenHex + blueHex);
+// }
 
-// task 4. Credentials
-// const capitalize = word => {
-//     return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-// };
-// const credentials = () => {
-//     const name = prompt("Введіть ваше ім'я:").trim();
-//     const surname = prompt("Введіть ваше прізвище:").trim();
-//     const fatherName = prompt("Введіть ваше по батькові:").trim();
+// if((red > 255) || (green > 255) || (blue > 255)) {
+//     console.log("Color values must be from 0 to 255")
+// }
+// else {
+//     console.log(colorGen(red, green, blue));
+// }
 
-//     const fullName = `${capitalize(name)} ${capitalize(surname)} ${capitalize(fatherName)}`;
-//     console.log("ПІБ:", fullName);
+/*
+Flats
+Оформіть Number: flats як функцію. Продумайте достатню кількість параметрів для розв'язання задачі. 
+Функція повинна повертати об'єкт виду {entrance, floor}, де entrance - номер падiка, floor - номер поверху, на якому знаходиться квартира.
+*/
 
-//     return { name, surname, fatherName, fullName };
-// };
-// credentials();
+// let floor_num = prompt("Введите количество этажей");
+// let flat_per_floor = prompt("Введите количество квартир на одном этаже");
+// let flat_num = prompt("Введите номер квартиры");
 
+// const EntrFloorCheck = (FloorNum, FlatsPerFloor, FlatNum) => 
+// {
 
+// FloorNum = parseInt(FloorNum); // количество этажей
+// FlatsPerFloor = parseInt(FlatsPerFloor); // количество квартир на одном этаже
+// FlatNum = parseInt(FlatNum); //номер квартиры
 
-// task 5. New line
-// const newLine = (inputString) => {
-//     const multiLineString = inputString.split('\\n').join('\n');
-//     return multiLineString;
-// };
+// let FlatsPerEntrance = parseInt(FloorNum * FlatsPerFloor); // количество квартир в одном подъезде
+// let FlatsInHouse = parseInt(FlatsPerEntrance * 3); // общее количество квартир в доме
 
-// // Приклад використання:
-// const userInput = prompt("Введіть рядок з маркерами нового рядка (\\n):");
-// const result = newLine(userInput);
-// console.log(result);
+// let entr = Math.floor(FlatNum / FlatsPerEntrance); // начальное значение номера подъезда
+// let flr = 0; // номер этажа. Сразу инициализируем и присваиваем начальное значение
 
+// if ((FlatNum % FlatsPerEntrance) != 0) {
+//     entr++; //инкрементируем, т.к. квартира находится в следующем подъезде
+// }
 
+// if ((FlatNum % FlatsPerEntrance) == 0) {
+//     flr = FloorNum; //квартира находится на последнем этаже
+// }
+// else {
+//     flr = Math.floor((FlatNum % FlatsPerEntrance) / FlatsPerFloor); //вычисляем номер этажа
 
-// task 6. Prompt OR
-// const PromptOR = (promptString, defaultValue) => prompt(promptString) || defaultValue;
+//     if ((FlatNum % FlatsPerFloor) != 0) {
+//         flr++;
+//         }
+//     }
 
-// // Приклад використання:
-// const age = PromptOR("Введіть ваш вік:", "Невідомий");
+//     const houseObj = {
+//         entrance: entr,
+//         floor: flr
+//     }
 
-// if (!age) {
-//     alert("Помилка! Введіть ваш вік.");
-// } else {
-//     alert(`Ваш вік: ${age}`);
+//     return houseObj;
 // }
 
 
+// console.log(EntrFloorCheck(floor_num, flat_per_floor, flat_num));
 
-// task 7. Login And Password
-// const LoginAndPassword = (correctLogin, correctPassword) => {
-//     const enteredLogin = prompt("Введіть логін:");  
-//     if (enteredLogin === correctLogin) {
-//         const enteredPassword = prompt("Введіть пароль:");   
-//         if (enteredPassword === correctPassword) {
-//             alert("Ласкаво просимо!");
-//             return true;
-//         } else {
-//             alert("Помилка! Невірний пароль.");
+
+/*
+4. Credentials
+Оформіть завдання String: credentials як функцію без параметрів. Використовуйте функцію capitalize із домашнього завдання з масивів. 
+Функція повинна містити виклики prompt та повертати об'єкт виду {name, surname, fatherName, fullName}
+*/
+
+// const f = () => {
+//     const capitalize = str => {
+//         if (!str) {
+//             return alert('Empty src string');
 //         }
-//     } else {
-//         alert("Помилка! Невірний логін.");
-//     }
+//         else {
+//             let result = str.toLowerCase();
+//             return result[0].toUpperCase() + result.slice(1);
+//         }
+//    }
+
+// let firstName = prompt("Ваше ім'я")
+// let secondName = prompt("Ваше по батькові")
+// let lastName = prompt ("Ваше прізвище")
+// firstName = firstName.trim()
+// secondName = secondName.trim()
+// lastName = lastName.trim()
+// let fullName = capitalize(firstName) + " " + capitalize(secondName) + " " + capitalize(lastName);
+
+// const personInfo = {
+//     name: firstName,
+//     surname: lastName,
+//     fatherName: secondName,
+//     fullName: fullName
+// }
+
+// return personInfo;
+// }
+
+// console.log(f());
+
+/*
+5. New line
+Оформіть завдання String: new line як функцію з параметром-рядком. Функція повинна повертати рядок із справжніми переносами.
+*/
+
+// let multilineString = prompt ("Введіть речення, використовуючи \\n для переносу рядка")
+
+// const ShiftFunc = (str) => {
+//     let lines = multilineString.split('\\n')
+//     let mark = lines.join('\n')
+//     return mark;
+// }
+
+// console.log(ShiftFunc(multilineString));
+
+/*
+6. Prompt OR
+Оформіть завдання Prompt: OR як функцію, яка приймає рядок для prompt та значення за замовчуванням. 
+Функція повинна повертати введений текст або значення за замовчуванням у разі відмови користувача вводити щось. 
+Використовуйте функцію без блоку коду (функція одного виразу)
+*/
+
+//  let ageVal = prompt ("Введіть ваш вік");
+//  let defaultVal = "Значення за замовченням";
+
+//  const func = (age, defaultVal) => age != "" ? age : defaultVal;
+
+//  console.log(func(ageVal, defaultVal));
+
+/*
+7. Login And Password
+Оформіть завдання Login And Password як функцію, яка приймає два параметри - 
+правильний логін та пароль і повертає true якщо логін та пароль введені користувачами вірні, або false якщо користувач не зміг. 
+Функція повинна містити в собі виклики prompt для введення логіну та пароля користувачем.
+*/
+
+// let login = "admin"
+// let password = "qwerty"
+
+// const credentialsCheck = (log, pass) => {
+
+// let userlogin = prompt ("Введіть логін")
+// let userpassword = prompt ("Введіть пароль")
+// if (userlogin !== log){
 //     return false;
-// };
-// const correctLogin = "admin";
-// const correctPassword = "qwerty";
-// const loggedIn = LoginAndPassword(correctLogin, correctPassword);
-// if (!loggedIn) {
-//     alert("Не вдалося увійти.");
-// }
-
-
-
-// task 8. For Table
-// const ForMultiplyTable = (arr) => {
-//     let tableHTML = '<table border="1">';
-    
-//     for (const row of arr) {
-//         tableHTML += '<tr>';
-        
-//         for (const cell of row) {
-//             tableHTML += `<td>${cell}</td>`;
+// }else if (userpassword !== pass){ 
+//     return false;
+// }else {
+//     if (userlogin === log && userpassword === pass){
+//         return true;
 //         }
-        
-//         tableHTML += '</tr>';
 //     }
-    
-//     tableHTML += '</table>';
-    
-//     return tableHTML;
-// };
-// const multiplyTable = [];
-// for (let i = 0; i < 5; i++) {
-//     const row = [];
-//     for (let j = 0; j < 5; j++) {
-//         row.push((i + 1) * (j + 1));
-//     }
-//     multiplyTable.push(row);
 // }
 
-// document.write(ForMultiplyTable(multiplyTable));
+// console.log(credentialsCheck(login, password))
 
+/*
+8. For Table
+Оформіть завдання For Multiply Table як функцію, яка приймає будь-який масив з масивами, а повертає рядок HTML з тегом <table> і всякими tr та td.
+*/
+// let rest = [0, 1, 2, 3, 4];
+// const table = [[...rest], [...rest], [...rest], [...rest], [...rest]];
 
+// const tableBuilder = (arr, nestedArr) => {
+  
+//   for(let i = 0; i < 5; i++) {
+//       for (let h = 0; h < 5; h++ ) {
+//           nestedArr[i][h] = (i + 1) * (h + 1);
+//       }
+//   }
 
-// task 9. Filter Lexics
-// const FilterLexics = (inputString, invalidWords) => {
-//     const words = inputString.split(' ');
-//     const filteredWords = words.filter(word => !invalidWords.includes(word));
-//     const resultString = filteredWords.join(' ');
-//     return resultString;
+// let str = "<table>"
+// let i = 0; //counter for rows colour realize
+// for (const row of nestedArr){
+//     if (i % 2 == 0) { 
+//      str += '<tr bgcolor="#5555ff">'
+//     }
+//     else {
+//         str += '<tr bgcolor="#773322">'
+//     }
+//     for (const cell of row){ 
+//          str += '<td>' + cell + '</td>'
+//     }
+//     str += '</tr>'
+//     i++;
+// }
+// str+= "</table>"
+// return str;
+// }
+// document.write(tableBuilder(rest, table)) //document.write відобразить ваш HTML на сторінці
+
+/*
+9. Оформіть завдання Filter Lexics як функцію, яка приймає будь-який рядок для перевірки та масив некоректних слів (['бляха', 'муха', "пляшка", "шабля"], наприклад). 
+Функція повинна повертати рядок без цих некоректних слів.
+*/
+
+// let string = prompt();
+
+// const filterFunc = (str) => { 
+
+//     const lexCheck = (strRaw) => {
+//         let forbiddenWords = ['word1', 'word2', 'word3'];
+//         let src = strRaw.toLowerCase();
+//         for (let i = 0; i < forbiddenWords.length; i++) {
+//             if (src == forbiddenWords[i]) {
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+// let arrOfStrings = str.split(' ');
+// let resultArr = arrOfStrings.filter(lexCheck);
+// let resultStr = resultArr.join(' ');
+// return resultStr;
+// }
+
+// console.log(filterFunc(string));
+
+/*
+11. Form
+Оформіть завдання Form як функцію, яка приймає будь-який об'єкт як параметр та створює форму на екрані.
+*/
+
+// const Obj = {
+//     "Name":"chevrolet chevelle malibu",
+//     "Cylinders":8,
+//     "Displacement":307,
+//     "Horsepower":130,
+//     "Weight_in_lbs":3504,
+//     "Origin":"USA",
+//     "in_production": false
 // };
 
-// const inputString = prompt("Введіть рядок:");
-// const invalidWords = ['бляха', 'муха', 'пляшка', 'шабля'];
+// const createForm = (car) => {
 
-// const filteredString = FilterLexics(inputString, invalidWords);
-// console.log(filteredString);
+//     const form = document.createElement("form");
 
+//     for (const key in car) {
+//       const label = document.createElement("label");
+//       label.textContent = key.charAt(0).toUpperCase() + key.slice(1); // make first letter as capital
 
+//       const input = document.createElement("input");
+//       input.type = typeof car[key] === "boolean" ? "checkbox" : "text"; // define input-type
 
-// task 10. Array of objects sort
-// const sort = (array, field, ascending = true) => {
-//     return array.sort((a, b) => {
-//         if (a[field] < b[field]) return ascending ? -1 : 1;
-//         if (a[field] > b[field]) return ascending ? 1 : -1;
-//         return 0;
-//     });
-// };
-// const persons = [
-//     {name: "Іван", age: 17},
-//     {name: "Марія", age: 35},
-//     {name: "Олексій", age: 73},
-//     {name: "Яків", age: 12},
-// ];
-// console.log(sort(persons, "age")); 
-// console.log(sort(persons, "name", false)); 
+//       if (typeof car[key] === "boolean") {
+//         input.checked = car[key];
+//       } else {
+//         input.value = car[key];
+//       }
+
+//       // create new string in the form
+//       const lineBreak = document.createElement("br");
+
+//       // add elements in the form
+//       form.appendChild(label);
+//       form.appendChild(input);
+//       form.appendChild(lineBreak);
+//     }
+
+//     // add form to body
+//     document.body.appendChild(form);
+// }
+
+// createForm(Obj);
